@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: todoAPI
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm run start:prod
+    envVars:
+      - key: DATABASE_URL
+        value: mongodb+srv://azirjeb8:azizess1234@cluster0.xqhigp0.mongodb.net/todoAPI?retryWrites=true&w=majority
+      - key: jwtSecretKey
+        generateValue: true
